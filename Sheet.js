@@ -68,16 +68,3 @@ function addTitles()
   SpreadsheetApp.getActiveSheet().getRange('D1').setValue('Weekly Change');
   SpreadsheetApp.getActiveSheet().getRange('E1').setValue('Monthly Change');
 }
-
-function wait()
-{
-  // Utilities.sleep(5*1000);
-  // console.log("SPREADY",SpreadsheetApp.getActiveSheet().getRange('A2').getValue())
-  // let one = SpreadsheetApp.getActiveSheet().getRange('A2').getValue().length==0
-  // console.log(one)
-  // return one 
-  // && SpreadsheetApp.getActiveSheet().getRange('B2').getValue().length==0
-  // && SpreadsheetApp.getActiveSheet().getRange('C2').getValue().length==0
-  // && SpreadsheetApp.getActiveSheet().getRange('D2').getValue().length==0
-  // && SpreadsheetApp.getActiveSheet().getRange('E2').getValue().length==0
-}
