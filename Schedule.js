@@ -1,4 +1,3 @@
-// const api_key='0';
 function launchThresholdTool() {
     // Schedule daily 7 PM email.
     addTitles()
@@ -8,8 +7,7 @@ function launchThresholdTool() {
     daily_email()
     weekly_email()
     monthly_email()
-    // getApiKey()
-    //console.log(api_key)
+
     ScriptApp.newTrigger('daily_email')
         .timeBased()
         .everyDays(1)
@@ -36,11 +34,7 @@ function launchThresholdTool() {
   
   function daily_email()
   {
-    //Exit if it is a weekend
-      // const day = new Date();
-      // if (day.getDay()>5 || day.getDay()==0) {
-      //   return;
-      // }
+   
     
     //Get stocks that exceed daily threshold
     const tickers = getTickers();
@@ -88,10 +82,6 @@ function launchThresholdTool() {
       }
     }
   
-    // console.log(valid_stocks);
-    // console.log(percent_change);
-  
-  
     const user = getEmail();
     const subject = craftSubject('Daily');
     const message = craftMessage('daily',valid_stocks.join('\r\n\n'));
@@ -116,8 +106,6 @@ function launchThresholdTool() {
   
     for(let i=0;i<tickers.length;i++)
     {
-      // console.log(tickers[i],valid_stocks)
-      // price_data = Object.values(getClosePrice("","TIME_SERIES_WEEKLY",tickers[i]))
       if (categories[i]=="S")
       {
         console.log("VALID STOCKS")
@@ -146,9 +134,7 @@ function launchThresholdTool() {
       }
     }
   
-    console.log(valid_stocks);
-    // console.log(percent_change);
-  
+    console.log(valid_stocks);  
   
     const user = getEmail();
     const subject = craftSubject('Weekly');
@@ -174,7 +160,6 @@ function launchThresholdTool() {
   
     for(let i=0;i<tickers.length;i++)
     {
-      // console.log(tickers[i],valid_stocks)
       console.log("COMPANY",tickers[i])
       if (categories[i]=="S")
       {
@@ -198,7 +183,6 @@ function launchThresholdTool() {
         index=1
       }
   
-      // price_data = Object.values(getClosePrice("Weekly Time Series","TIME_SERIES_WEEKLY",tickers[i]))
       console.log("PRICEY",price_data)
       prev_price=price_data[index]['1. open']
       curr_price=price_data[index]['4. close'];
@@ -216,7 +200,6 @@ function launchThresholdTool() {
     }
   
     console.log(valid_stocks);
-    // console.log(percent_change);
   
   
     const user = getEmail();
